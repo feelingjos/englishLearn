@@ -15,8 +15,9 @@ public class DateOptionsUtils {
 
 
     /**
-     * 获取日期
-     * @param range 往后天数
+     * 获取日期 yyyymmdd格式
+     * @param date    日期
+     * @param range   与日期的偏移量
      * @return
      */
     public static Integer getDate(String date,Integer range){

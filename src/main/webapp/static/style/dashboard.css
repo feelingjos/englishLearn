@@ -1,0 +1,83 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: red;
+}
+
+.line-function {
+    height: 100px;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding-top: 10px;
+}
+
+.function-class {
+    float: left;
+    margin: 0;
+    padding: 0;
+    background: green;
+    width: 25%;
+    height: 100px;
+    position: relative;
+}
+
+.col-function {
+    border: 1px solid hotpink;
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.word-icon {
+    height: 65px;
+    width: 65px;
+    padding-top: 7px;
+    float: left;
+    z-index: 100px;
+}
+
+.function-word {
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    top: 35%;
+}
+
+.word-text {
+    width: 100%;
+    height: 100%;
+    /*background: darkblue;*/
+    line-height: 100%;
+    cursor: pointer;
+}
+.information-container {
+    position: relative;
+    bottom: 0px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: auto;
+    border: 1px solid black;
+    height: calc(100% - 120px );
+}
+.col-information-left{
+    width: 98%;
+    height: 40%;
+    border: 1px solid darkcyan;
+    margin: auto;
+    margin-top: 50px;
+}

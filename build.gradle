@@ -1,0 +1,73 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'application'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+
+group = 'com.feelj.lean'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+mainClassName = 'com.feelj.lean.english.word.EnglishwordApplication'
+
+idea {
+	module {
+		// if you hate browsing Javadoc
+		downloadJavadoc = false
+
+		// and love reading sources :)
+		downloadSources = true
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
+	runtimeOnly 'mysql:mysql-connector-java'
+	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.53'
+	compile group: 'javax.servlet', name: 'jstl'
+	compile group: 'org.apache.tomcat.embed',name: 'tomcat-embed-jasper'
+
+	compile 'org.apache.poi:poi:4.1.0'
+	compile 'org.apache.poi:poi-ooxml:4.1.0'
+
+	compile group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-starter', version: '1.2.9'
+
+	compile 'com.github.pagehelper:pagehelper:5.0.0'
+
+	// https://mvnrepository.com/artifact/junit/junit
+	compile group: 'junit', name: 'junit', version: '4.12'
+
+}
+
+/*sourceSets {
+	main {
+		resources {
+			srcDirs "src/main/resources", "src/main/webapp"
+		}
+	}
+}*/
+
+
+/*jar {
+	manifest {
+		attributes 'Main-Class': mainClassName
+	}
+	from {
+		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+}*/

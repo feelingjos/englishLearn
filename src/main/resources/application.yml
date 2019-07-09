@@ -1,0 +1,26 @@
+server:
+  port: 9959
+spring:
+  datasource:
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.111:3306/englishlean?useSSL=false&serverTimezone=UTC&characterEncoding=utf-8&useAffectedRows=true&allowMultiQueries=true
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+  thymeleaf:
+    cache: false
+    enabled: false
+  resources:
+    chain:
+      cache: false
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.feelj.lean.english.word.*
+logging:
+  level:
+    com.feelj.lean.english.word.dao.*: debug

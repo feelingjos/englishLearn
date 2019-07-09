@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.feelj.lean.english.word.dao.MemoryRuleMapper">
+
+    <insert id="insertByBatch" parameterType="java.util.List">
+        insert into memoryrule (word_id, appear_time,next_review)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.wordId}, #{item.apperTime},#{item.nextReview})
+        </foreach>
+    </insert>
+    
+    <select id="isMemoryWord" parameterType="Integer" resultType="List">
+        select
+            id,word_id,appear_time,next_review,next_review_count
+        from memoryrule
+        <where>
+            <if test="memoryTime !=null and memoryTime !=''">
+                and appear_time = #{memoryTime}
+            </if>
+            <if test="wordId !=null and wordId !=''">
+                and word_id = #{wordId}
+            </if>
+        </where>
+    </select>
+
+    <select id="findTodayList" resultType="com.feelj.lean.english.word.dto.MemoryRuleView">
+        select
+            rule.id, word.id wordid,
+            word.word,word.phonetic_symbol,
+            word.type,rule.next_review,
+            word.translate,rule.appear_time as memory_time,
+            memory_expression,expression_index
+        from memoryrule rule
+        left join wordenglish word on word.id = rule.word_id
+        <where>
+            <if test="memoryTime !=null and memoryTime !=''">
+               and rule.appear_time = #{memoryTime,jdbcType=INTEGER}
+            </if>
+            <if test="keyword !=null and keyword !=''">
+               and word.word like #{keyword}
+            </if>
+        </where>
+    </select>
+
+
+
+</mapper>

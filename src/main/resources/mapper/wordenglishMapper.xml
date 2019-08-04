@@ -109,7 +109,13 @@
         </foreach>
     </update>
 
+    <insert id="insertBatch" parameterType="wordEnglish">
 
+        INSERT INTO wordenglish_test(word,`type`,phonetic_symbol,translate,memory_time,memory_expression,expression_index)VALUES
+        <foreach collection="data" item="item" index="index" open="" close="" separator=",">
+            (#{item.word},#{item.type},#{item.phoneticSymbol},#{item.translate},#{item.memoryTime},#{item.memoryExpression},#{item.expressionIndex})
+        </foreach>
 
+    </insert>
 
 </mapper>

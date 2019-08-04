@@ -85,4 +85,10 @@ public interface WordEnglishMapper {
      */
     void updateBatch(List<WordEnglish> data);
 
+    /**
+     * 批量保存
+     * @param data
+     */
+    void insertBatch(@Param("data") List<WordEnglish> data);
+
 }

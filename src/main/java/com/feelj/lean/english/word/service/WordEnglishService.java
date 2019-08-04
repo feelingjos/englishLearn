@@ -3,7 +3,6 @@ package com.feelj.lean.english.word.service;
 import com.feelj.lean.english.word.common.PageListData;
 import com.feelj.lean.english.word.dto.WordView;
 import com.feelj.lean.english.word.entity.WordEnglish;
-import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -63,5 +62,11 @@ public interface WordEnglishService {
      * @param id
      */
     void deleteById(Integer id);
+
+    /**
+     * 批量保存
+     * @param data
+     */
+    void insertBatch(List<WordEnglish> data);
 
 }

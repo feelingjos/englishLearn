@@ -88,4 +88,9 @@ public class WordEnglishServiceImpl implements WordEnglishService {
     public void deleteById(Integer id) {
         wordEnglishMapper.deleteById(id);
     }
+
+    @Override
+    public void insertBatch(List<WordEnglish> data) {
+        wordEnglishMapper.insertBatch(data);
+    }
 }

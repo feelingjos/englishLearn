@@ -17,9 +17,6 @@ public class WebAppConfigurer implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         String path = System.getProperty("user.dir") + File.separator;
-
-        System.out.println(path);
-
         registry.addResourceHandler("/res/**").addResourceLocations("file:"+path);
     }
 }

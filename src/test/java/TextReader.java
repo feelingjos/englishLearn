@@ -1,5 +1,6 @@
 import com.feelj.lean.english.word.core.DateOptionsUtils;
 import com.feelj.lean.english.word.entity.WordEnglish;
+import com.feelj.lean.english.word.util.ApkUtil;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
@@ -417,6 +418,11 @@ public class TextReader {
 
         System.out.println(date);
 
+    }
+
+    @Test
+    public void test9(){
+        ApkUtil.getVerison();
     }
 
 

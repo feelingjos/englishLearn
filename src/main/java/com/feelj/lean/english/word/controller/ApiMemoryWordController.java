@@ -33,7 +33,7 @@ public class ApiMemoryWordController {
 
     @PostMapping("/saveNewWordForApp")
     public void saveNewWord(@Param("data") String data){
-        if(null == data && !"".equals(data)){
+        if(null != data && !"".equals(data)){
             List<WordEnglish> wordEnglishes = JSON.parseArray(data, WordEnglish.class);
             wordEnglishService.insertBatch(wordEnglishes);
         }

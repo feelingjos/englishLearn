@@ -38,6 +38,8 @@ dependencies {
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.boot:spring-boot-starter-test'
 
+	compile 'net.dongliu:apk-parser:2.6.9'
+
 	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.53'
 	compile group: 'javax.servlet', name: 'jstl'
 	compile group: 'org.apache.tomcat.embed',name: 'tomcat-embed-jasper'

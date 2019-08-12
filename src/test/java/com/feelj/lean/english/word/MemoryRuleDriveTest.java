@@ -3,7 +3,6 @@ package com.feelj.lean.english.word;
 import com.alibaba.fastjson.util.TypeUtils;
 import com.feelj.lean.english.word.core.DateOptionsUtils;
 import com.feelj.lean.english.word.dao.MemoryRuleMapper;
-import com.feelj.lean.english.word.dao.TestMapper;
 import com.feelj.lean.english.word.dao.WordEnglishMapper;
 import com.feelj.lean.english.word.entity.MemoryRule;
 import com.feelj.lean.english.word.entity.WordEnglish;
@@ -108,9 +107,6 @@ public class MemoryRuleDriveTest {
             wordEnglishMapper.updateBatch(updateWord);
         }
     }
-
-    @Resource
-    private TestMapper testMapper;
 
     @Test
     public void test1(){

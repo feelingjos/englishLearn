@@ -4,6 +4,7 @@ import net.dongliu.apk.parser.ApkFile;
 import net.dongliu.apk.parser.bean.ApkMeta;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * @Auther: feelj
@@ -15,18 +16,25 @@ public class ApkUtil {
     /**
      * 获取版本号
      */
-    public static  void getVerison(){
+    public static  ApkMeta getVerison(){
+        ApkFile apkParser = null;
         try{
-            ApkFile apkParser = new ApkFile(new File("E:\\elesh\\static\\app-release.apk"));
-            String xml = apkParser.getManifestXml();
-            System.out.println(xml);
+            String path = System.getProperty("user.dir") + File.separator + "static\\app-release.apk";
+            apkParser = new ApkFile(new File(path));
             ApkMeta apkMeta = apkParser.getApkMeta();
-            System.out.println(apkMeta);
-            apkParser.close();
+            return apkMeta;
         }catch (Exception ex){
             ex.getMessage();
+        }finally {
+            if(null != apkParser){
+                try {
+                    apkParser.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-
+        return null;
     }
 
 }

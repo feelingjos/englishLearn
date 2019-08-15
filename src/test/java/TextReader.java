@@ -1,11 +1,13 @@
 import com.feelj.lean.english.word.core.DateOptionsUtils;
 import com.feelj.lean.english.word.entity.WordEnglish;
 import com.feelj.lean.english.word.util.ApkUtil;
+import net.dongliu.apk.parser.bean.ApkMeta;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.List;
@@ -422,7 +424,15 @@ public class TextReader {
 
     @Test
     public void test9(){
-        ApkUtil.getVerison();
+        ApkMeta verison = ApkUtil.getVerison();
+
+        System.out.println(verison.getVersionCode());
+
+        String path = System.getProperty("user.dir") + File.separator;
+
+        System.out.println(path);
+
+
     }
 
 

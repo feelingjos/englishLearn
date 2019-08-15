@@ -5,6 +5,8 @@ import com.feelj.lean.english.word.dto.MemoryWordForAndroid;
 import com.feelj.lean.english.word.entity.WordEnglish;
 import com.feelj.lean.english.word.service.ApiMemoryWordService;
 import com.feelj.lean.english.word.service.WordEnglishService;
+import com.feelj.lean.english.word.util.ApkUtil;
+import net.dongliu.apk.parser.bean.ApkMeta;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +39,12 @@ public class ApiMemoryWordController {
             List<WordEnglish> wordEnglishes = JSON.parseArray(data, WordEnglish.class);
             wordEnglishService.insertBatch(wordEnglishes);
         }
+    }
+
+    @PostMapping("/getApkVersion")
+    public Long getApkVersion(){
+        ApkMeta verison = ApkUtil.getVerison();
+        return verison.getVersionCode();
     }
 
 }

@@ -8,7 +8,6 @@ apply plugin: 'application'
 apply plugin: 'war'
 apply plugin: 'idea'
 
-
 group = 'com.feelj.lean'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -29,6 +28,22 @@ repositories {
 	mavenLocal()
 	mavenCentral()
 }
+
+/*bootJar {
+	classifier = 'boot'
+	mainClassName = 'org.springframework.boot.loader.JarLauncher'
+	manifest {
+		attributes 'Start-Class': "${mainClass}"
+	}
+}
+
+springBoot {
+	mainClassName = 'org.springframework.boot.loader.JarLauncher'
+}
+
+startScripts {
+	mainClassName = "${mainClass}"
+}*/
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'

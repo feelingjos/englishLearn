@@ -49,9 +49,9 @@
                 if (!$(this).hasClass('active')) {
                     $(this).addClass('active').siblings('.J_menuTab',parent.document).removeClass('active');
                     scrollToTab(this);
-                    // 显示tab对应的内容区
-                    $('.J_mainContent .J_iframe').each(function () {
+                    $('.J_mainContent .J_iframe',parent.document).each(function () {
                         if ($(this).data('id') == dataUrl) {
+                            // 显示tab对应的内容区
                             $(this).show().siblings('.J_iframe',parent.document).hide();
                             return false;
                         }
@@ -63,6 +63,7 @@
         });
 
         if (flag) {
+
             var str = '<a href="javascript:;" class="active J_menuTab" data-id="' + dataUrl + '">' + menuName + ' <i class="fa fa-times-circle"></i><!--&nbsp;<i class="fa fa-refresh"></i>--></a>';
             $('.J_menuTab',parent.document).removeClass('active');
 
@@ -84,6 +85,7 @@
     });
 
     function scrollToTab(element){
+
         //debugger
         var marginLeftVal = calSumWidth($(element).prevAll()), marginRightVal = calSumWidth($(element).nextAll());
         // 可视区域非tab宽度

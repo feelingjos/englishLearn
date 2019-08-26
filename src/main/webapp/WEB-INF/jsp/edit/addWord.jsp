@@ -60,7 +60,9 @@
                 <input type="text" name="translate" value="${wordView.translate}" class="input-text" />
             </div>
         </div>
-        <div class="input-row-col">
+        <div class="input-row-col ">
+        </div>
+        <div class="input-row-col custom">
             <div class="form-submit-button">
                 <button class="btn" id="save">保存</button>
             </div>
